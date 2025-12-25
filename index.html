@@ -6,831 +6,8 @@
     <title>MOIRE | Look Book</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&family=Manrope:wght@200..800&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --dark-blue: #1a1f3c;
-            --dark-blue-light: #2a3158;
-            --beige: #f5f0e8;
-            --beige-dark: #e8e0d0;
-            --white: #ffffff;
-            --accent-gold: #c9a86c;
-            --text-dark: #1a1f3c;
-            --text-light: #6b7280;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--beige);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--dark-blue-light) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(201, 168, 108, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(245, 240, 232, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 50px;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.05);
-        }
-
-        .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(4rem, 12vw, 10rem);
-            font-weight: 300;
-            letter-spacing: 0.3em;
-            margin-bottom: 1rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 3rem;
-        }
-
-        .hero-divider {
-            width: 60px;
-            height: 1px;
-            background: var(--accent-gold);
-            margin: 2rem auto;
-        }
-
-        .hero-description {
-            max-width: 500px;
-            font-size: 0.95rem;
-            line-height: 1.8;
-            color: rgba(255,255,255,0.6);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(10px); }
-        }
-
-        /* Section Styles */
-        section {
-            padding: 6rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 400;
-            margin-bottom: 1rem;
-            color: var(--dark-blue);
-        }
-
-        .section-subtitle {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Icons Section */
-        .icons-section {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 4rem;
-            margin: 2rem;
-            box-shadow: 0 20px 60px rgba(26, 31, 60, 0.08);
-        }
-
-        .icon-category {
-            margin-bottom: 4rem;
-        }
-
-        .icon-category:last-child {
-            margin-bottom: 0;
-        }
-
-        .category-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: var(--dark-blue);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .category-title::before {
-            content: '';
-            width: 30px;
-            height: 2px;
-            background: var(--accent-gold);
-        }
-
-        .category-description {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            padding-left: 46px;
-        }
-
-        .icon-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .icon-option {
-            background: var(--beige);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-        }
-
-        .icon-option:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(26, 31, 60, 0.1);
-        }
-
-        .icon-option.selected {
-            border-color: var(--accent-gold);
-            background: rgba(201, 168, 108, 0.1);
-        }
-
-        .icon-option.selected::after {
-            content: '✓';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 24px;
-            height: 24px;
-            background: var(--accent-gold);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-        }
-
-        .icon-display {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .icon-display svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .icon-name {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--dark-blue);
-            letter-spacing: 1px;
-        }
-
-        .icon-style {
-            font-size: 0.7rem;
-            color: var(--text-light);
-            margin-top: 0.25rem;
-        }
-
-        /* Typography Section */
-        .typography-section {
-            padding: 6rem 2rem;
-        }
-
-        .font-options {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .font-option {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 3rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            box-shadow: 0 10px 40px rgba(26, 31, 60, 0.06);
-        }
-
-        .font-option:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(26, 31, 60, 0.1);
-        }
-
-        .font-option.selected {
-            border-color: var(--accent-gold);
-        }
-
-        .font-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--beige-dark);
-        }
-
-        .font-info h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--dark-blue);
-            margin-bottom: 0.25rem;
-        }
-
-        .font-info span {
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-
-        .font-tag {
-            padding: 0.4rem 1rem;
-            background: var(--beige);
-            border-radius: 50px;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--dark-blue);
-        }
-
-        .font-preview {
-            margin-bottom: 1.5rem;
-        }
-
-        .font-preview-heading {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-            color: var(--dark-blue);
-        }
-
-        .font-preview-body {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-        }
-
-        .font-sample {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--beige-dark);
-        }
-
-        .font-sample-item {
-            flex: 1;
-            min-width: 150px;
-        }
-
-        .font-sample-label {
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .font-sample-text {
-            font-size: 1.5rem;
-            color: var(--dark-blue);
-        }
-
-        /* Specific Font Families */
-        .font-1 .font-preview-heading { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
-        .font-1 .font-preview-body { font-family: 'DM Sans', sans-serif; }
-        .font-1 .sample-heading { font-family: 'Cormorant Garamond', serif; }
-        .font-1 .sample-body { font-family: 'DM Sans', sans-serif; }
-
-        .font-2 .font-preview-heading { font-family: 'Playfair Display', serif; font-weight: 500; }
-        .font-2 .font-preview-body { font-family: 'Outfit', sans-serif; }
-        .font-2 .sample-heading { font-family: 'Playfair Display', serif; }
-        .font-2 .sample-body { font-family: 'Outfit', sans-serif; }
-
-        .font-3 .font-preview-heading { font-family: 'Libre Baskerville', serif; font-weight: 400; }
-        .font-3 .font-preview-body { font-family: 'Manrope', sans-serif; }
-        .font-3 .sample-heading { font-family: 'Libre Baskerville', serif; }
-        .font-3 .sample-body { font-family: 'Manrope', sans-serif; }
-
-        .font-4 .font-preview-heading { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; }
-        .font-4 .font-preview-body { font-family: 'DM Sans', sans-serif; }
-        .font-4 .sample-heading { font-family: 'Fraunces', serif; }
-        .font-4 .sample-body { font-family: 'DM Sans', sans-serif; }
-
-        .font-5 .font-preview-heading { font-family: 'Syne', sans-serif; font-weight: 600; }
-        .font-5 .font-preview-body { font-family: 'DM Sans', sans-serif; }
-        .font-5 .sample-heading { font-family: 'Syne', sans-serif; }
-        .font-5 .sample-body { font-family: 'DM Sans', sans-serif; }
-
-        /* Footer Color Section */
-        .footer-section {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 4rem;
-            margin: 2rem;
-            box-shadow: 0 20px 60px rgba(26, 31, 60, 0.08);
-        }
-
-        .color-picker-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        @media (max-width: 900px) {
-            .color-picker-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .color-wheel-wrapper {
-            text-align: center;
-        }
-
-        .color-wheel-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-blue);
-        }
-
-        .color-wheel {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            margin: 0 auto 2rem;
-            border-radius: 50%;
-            background: conic-gradient(
-                from 0deg,
-                #1a1f3c,
-                #2a3158,
-                #3d4470,
-                #1a1f3c,
-                #0d1020,
-                #1a1f3c
-            );
-            cursor: crosshair;
-            box-shadow: 0 10px 40px rgba(26, 31, 60, 0.2);
-        }
-
-        .color-wheel::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60%;
-            height: 60%;
-            border-radius: 50%;
-            background: conic-gradient(
-                from 0deg,
-                #f5f0e8,
-                #e8e0d0,
-                #d4c9b8,
-                #f5f0e8,
-                #fffaf5,
-                #f5f0e8
-            );
-        }
-
-        .color-wheel::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 25%;
-            height: 25%;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ffffff, #f8f8f8);
-            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .color-pointer {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border: 3px solid white;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            pointer-events: none;
-            top: 20%;
-            left: 50%;
-        }
-
-        .preset-colors {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .preset-color {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-            position: relative;
-        }
-
-        .preset-color:hover {
-            transform: scale(1.1);
-        }
-
-        .preset-color.selected {
-            border-color: var(--accent-gold);
-        }
-
-        .preset-color.selected::after {
-            content: '✓';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 1.2rem;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-
-        .preset-dark-blue { background: var(--dark-blue); }
-        .preset-dark-blue-light { background: var(--dark-blue-light); }
-        .preset-beige { background: var(--beige); border: 1px solid #ddd; }
-        .preset-beige.selected::after { color: var(--dark-blue); text-shadow: none; }
-        .preset-beige-dark { background: var(--beige-dark); border: 1px solid #ccc; }
-        .preset-beige-dark.selected::after { color: var(--dark-blue); text-shadow: none; }
-        .preset-white { background: var(--white); border: 1px solid #ddd; }
-        .preset-white.selected::after { color: var(--dark-blue); text-shadow: none; }
-
-        .preset-labels {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .preset-label {
-            width: 50px;
-            font-size: 0.6rem;
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        .custom-color-input {
-            margin-top: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .custom-color-input label {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .custom-color-input input[type="color"] {
-            width: 50px;
-            height: 40px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            background: none;
-        }
-
-        .custom-color-input input[type="text"] {
-            width: 100px;
-            padding: 0.6rem 1rem;
-            border: 1px solid var(--beige-dark);
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        /* Footer Preview */
-        .footer-preview-wrapper h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-blue);
-        }
-
-        .footer-preview {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(26, 31, 60, 0.15);
-            transition: background-color 0.3s ease;
-        }
-
-        .footer-content {
-            padding: 3rem 2.5rem 2rem;
-        }
-
-        .footer-top {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-brand h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.2rem;
-        }
-
-        .footer-brand p {
-            font-size: 0.8rem;
-            line-height: 1.8;
-            opacity: 0.7;
-            margin-bottom: 0.4rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-brand p svg {
-            width: 14px;
-            height: 14px;
-            opacity: 0.7;
-        }
-
-        .footer-links h5 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.6rem;
-        }
-
-        .footer-links a {
-            font-size: 0.8rem;
-            text-decoration: none;
-            opacity: 0.7;
-            transition: opacity 0.2s;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-payments {
-            font-size: 0.75rem;
-            opacity: 0.6;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 0.8rem;
-        }
-
-        .footer-social a {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-        }
-
-        .footer-social a:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .footer-social svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .selected-color-display {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: var(--beige);
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .selected-color-display span {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .selected-color-display strong {
-            font-family: monospace;
-            color: var(--dark-blue);
-            margin-left: 0.5rem;
-        }
-
-        /* Summary Section */
-        .summary-section {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--dark-blue-light) 100%);
-            color: var(--white);
-            padding: 4rem;
-            margin: 2rem;
-            border-radius: 24px;
-        }
-
-        .summary-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .summary-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2rem;
-        }
-
-        .summary-card h4 {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.7;
-            margin-bottom: 1rem;
-        }
-
-        .summary-card .value {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-        }
-
-        .summary-icons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .summary-icon-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-        }
-
-        .summary-icon-item svg {
-            width: 30px;
-            height: 30px;
-        }
-
-        .summary-icon-item span {
-            font-size: 0.65rem;
-            opacity: 0.7;
-        }
-
-        .export-btn {
-            display: block;
-            width: fit-content;
-            margin: 3rem auto 0;
-            padding: 1rem 3rem;
-            background: var(--accent-gold);
-            color: var(--dark-blue);
-            border: none;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .export-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 168, 108, 0.4);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .icons-section,
-            .footer-section,
-            .summary-section {
-                margin: 1rem;
-                padding: 2rem 1.5rem;
-            }
-
-            .footer-top {
-                grid-template-columns: 1fr;
-            }
-
-            .color-picker-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&family=Manrope:wght@200..800&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Syne:wght@400..800&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Hero Section -->
@@ -858,223 +35,365 @@
         <div class="section-header">
             <p class="section-number">01</p>
             <h2 class="section-title">Category Icons</h2>
-            <p class="section-subtitle">Select an icon style for each product category. Click to select your preferred option.</p>
+            <p class="section-subtitle">Select an icon for each product category. All icons feature rug-inspired patterns and textile motifs.</p>
         </div>
 
         <!-- Abstract Rugs -->
         <div class="icon-category" data-category="abstract-rugs">
-            <h3 class="category-title">Abstract Rugs</h3>
-            <p class="category-description">Artistic, fluid designs representing the abstract nature of these rugs</p>
+            <div class="category-header">
+                <h3 class="category-title">Abstract Rugs</h3>
+            </div>
+            <p class="category-description">Artistic patterns representing the fluid, modern nature of abstract rug designs</p>
             <div class="icon-grid">
-                <div class="icon-option" data-icon="abstract-1" onclick="selectIcon('abstract-rugs', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <circle cx="40" cy="40" r="30" />
-                            <path d="M20 40 Q30 20 40 40 Q50 60 60 40" />
-                            <path d="M40 20 Q20 30 40 40 Q60 50 40 60" />
-                        </svg>
-                    </div>
-                    <p class="icon-name">Waves</p>
-                    <p class="icon-style">Minimal Line</p>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M8 20h44M8 32h44M8 44h44"/><path d="M20 8v44M32 8v44M44 8v44"/></svg></div>
+                    <p class="icon-name">Grid Pattern</p>
                 </div>
-                <div class="icon-option" data-icon="abstract-2" onclick="selectIcon('abstract-rugs', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <rect x="15" y="15" width="50" height="50" rx="4"/>
-                            <path d="M25 55 Q35 25 55 35 Q45 55 55 55"/>
-                            <circle cx="30" cy="30" r="5"/>
-                        </svg>
-                    </div>
-                    <p class="icon-name">Organic</p>
-                    <p class="icon-style">Artistic</p>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M15 45 Q25 15 35 45 Q45 15 52 30"/><circle cx="20" cy="25" r="3"/></svg></div>
+                    <p class="icon-name">Wave Flow</p>
                 </div>
-                <div class="icon-option" data-icon="abstract-3" onclick="selectIcon('abstract-rugs', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <rect x="20" y="20" width="40" height="40" rx="3" fill="#1a1f3c" opacity="0.1"/>
-                            <path d="M25 50 Q40 20 55 50" stroke="#1a1f3c" stroke-width="2" fill="none"/>
-                            <path d="M30 55 Q40 35 50 55" stroke="#1a1f3c" stroke-width="2" fill="none"/>
-                        </svg>
-                    </div>
-                    <p class="icon-name">Layers</p>
-                    <p class="icon-style">Geometric</p>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><circle cx="30" cy="30" r="15"/><circle cx="30" cy="30" r="10"/><circle cx="30" cy="30" r="5"/></svg></div>
+                    <p class="icon-name">Concentric</p>
                 </div>
-                <div class="icon-option" data-icon="abstract-4" onclick="selectIcon('abstract-rugs', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <path d="M20 60 C20 30 35 20 40 20 C45 20 60 30 60 60"/>
-                            <path d="M28 60 C28 40 35 32 40 32 C45 32 52 40 52 60"/>
-                            <path d="M36 60 C36 50 38 45 40 45 C42 45 44 50 44 60"/>
-                        </svg>
-                    </div>
-                    <p class="icon-name">Contours</p>
-                    <p class="icon-style">Topographic</p>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M8 52 L30 8 L52 52"/><path d="M15 52 L30 20 L45 52"/></svg></div>
+                    <p class="icon-name">Triangle Layers</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M8 30 Q20 10 30 30 Q40 50 52 30"/><path d="M8 40 Q20 20 30 40 Q40 60 52 40"/></svg></div>
+                    <p class="icon-name">Double Wave</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><rect x="15" y="15" width="30" height="30" transform="rotate(45 30 30)"/></svg></div>
+                    <p class="icon-name">Diamond Center</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M8 8 L52 52M52 8 L8 52"/><circle cx="30" cy="30" r="8"/></svg></div>
+                    <p class="icon-name">X Motif</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M15 30 L30 15 L45 30 L30 45 Z"/><path d="M22 30 L30 22 L38 30 L30 38 Z"/></svg></div>
+                    <p class="icon-name">Nested Diamond</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M8 15h44M8 25h44M8 35h44M8 45h44" stroke-dasharray="4 4"/></svg></div>
+                    <p class="icon-name">Dashed Lines</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><ellipse cx="30" cy="30" rx="18" ry="10"/><ellipse cx="30" cy="30" rx="10" ry="18"/></svg></div>
+                    <p class="icon-name">Oval Cross</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M30 8v44"/><path d="M8 30h44"/><circle cx="30" cy="30" r="12"/></svg></div>
+                    <p class="icon-name">Cross Circle</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M8 8 Q30 30 8 52"/><path d="M52 8 Q30 30 52 52"/></svg></div>
+                    <p class="icon-name">Curved Edges</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><rect x="14" y="14" width="32" height="32" rx="1"/><rect x="20" y="20" width="20" height="20" rx="1"/></svg></div>
+                    <p class="icon-name">Frame Stack</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M15 15 L45 15 L30 45 Z"/></svg></div>
+                    <p class="icon-name">Triangle</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M8 8 L30 30 L8 52"/><path d="M52 8 L30 30 L52 52"/></svg></div>
+                    <p class="icon-name">Arrow Motif</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><circle cx="20" cy="20" r="6"/><circle cx="40" cy="20" r="6"/><circle cx="20" cy="40" r="6"/><circle cx="40" cy="40" r="6"/></svg></div>
+                    <p class="icon-name">Four Dots</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M30 8 C15 20 15 40 30 52 C45 40 45 20 30 8"/></svg></div>
+                    <p class="icon-name">Leaf Shape</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M15 30h30M30 15v30"/><path d="M20 20l20 20M40 20l-20 20"/></svg></div>
+                    <p class="icon-name">Star Cross</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M8 20 Q30 8 52 20 Q30 32 8 20"/><path d="M8 40 Q30 28 52 40 Q30 52 8 40"/></svg></div>
+                    <p class="icon-name">Eye Pattern</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="2"/><path d="M12 12h12v12h-12zM36 12h12v12h-12zM12 36h12v12h-12zM36 36h12v12h-12z"/></svg></div>
+                    <p class="icon-name">Corner Squares</p>
                 </div>
             </div>
         </div>
 
         <!-- GenZ Rugs -->
         <div class="icon-category" data-category="genz-rugs">
-            <h3 class="category-title">GenZ Rugs</h3>
-            <p class="category-description">Bold, contemporary designs with a youthful energy</p>
+            <div class="category-header">
+                <h3 class="category-title">GenZ Rugs</h3>
+            </div>
+            <p class="category-description">Bold, playful patterns with contemporary energy for younger audiences</p>
             <div class="icon-grid">
-                <div class="icon-option" data-icon="genz-1" onclick="selectIcon('genz-rugs', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <rect x="18" y="18" width="44" height="44" rx="8" stroke="#1a1f3c" stroke-width="2"/>
-                            <path d="M30 40 L38 48 L50 32" stroke="#1a1f3c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <p class="icon-name">Vibe Check</p>
-                    <p class="icon-style">Bold</p>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M20 25 Q30 35 40 25" stroke-width="2"/><circle cx="22" cy="22" r="2" fill="#1a1f3c"/><circle cx="38" cy="22" r="2" fill="#1a1f3c"/></svg></div>
+                    <p class="icon-name">Happy Face</p>
                 </div>
-                <div class="icon-option" data-icon="genz-2" onclick="selectIcon('genz-rugs', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <circle cx="40" cy="40" r="22" stroke="#1a1f3c" stroke-width="2"/>
-                            <path d="M32 35 Q40 45 48 35" stroke="#1a1f3c" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="32" cy="35" r="2" fill="#1a1f3c"/>
-                            <circle cx="48" cy="35" r="2" fill="#1a1f3c"/>
-                            <path d="M35 48 Q40 52 45 48" stroke="#1a1f3c" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <p class="icon-name">Smiley</p>
-                    <p class="icon-style">Playful</p>
-                </div>
-                <div class="icon-option" data-icon="genz-3" onclick="selectIcon('genz-rugs', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="2">
-                            <path d="M40 18 L45 32 L60 32 L48 42 L52 57 L40 48 L28 57 L32 42 L20 32 L35 32 Z"/>
-                        </svg>
-                    </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="2"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M30 15 L33 25 L44 25 L35 32 L38 43 L30 36 L22 43 L25 32 L16 25 L27 25 Z"/></svg></div>
                     <p class="icon-name">Star</p>
-                    <p class="icon-style">Iconic</p>
                 </div>
-                <div class="icon-option" data-icon="genz-4" onclick="selectIcon('genz-rugs', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <rect x="22" y="22" width="36" height="36" rx="4" fill="#1a1f3c" opacity="0.1"/>
-                            <rect x="22" y="22" width="36" height="36" rx="4" stroke="#1a1f3c" stroke-width="2"/>
-                            <path d="M32 40 L40 32 L48 40 L40 48 Z" stroke="#1a1f3c" stroke-width="2"/>
-                        </svg>
-                    </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M30 15 C15 25 15 40 30 45 C45 40 45 25 30 15"/></svg></div>
+                    <p class="icon-name">Heart</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="2"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M20 40 L25 20 L30 35 L35 15 L40 40"/></svg></div>
+                    <p class="icon-name">Zigzag</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><circle cx="30" cy="30" r="12"/><path d="M30 18v24M18 30h24"/></svg></div>
+                    <p class="icon-name">Target</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="2"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M15 30h30M30 15v30" stroke-linecap="round"/></svg></div>
+                    <p class="icon-name">Plus</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><rect x="18" y="18" width="24" height="24" rx="2" transform="rotate(45 30 30)"/></svg></div>
                     <p class="icon-name">Diamond</p>
-                    <p class="icon-style">Minimal</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M15 15 L45 45M15 45 L45 15" stroke-width="2"/></svg></div>
+                    <p class="icon-name">X Mark</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><circle cx="20" cy="30" r="5"/><circle cx="40" cy="30" r="5"/><circle cx="30" cy="20" r="5"/><circle cx="30" cy="40" r="5"/></svg></div>
+                    <p class="icon-name">Four Circles</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="2"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M15 25h30M15 35h30"/></svg></div>
+                    <p class="icon-name">Equal</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M18 18h8v8h-8zM34 18h8v8h-8zM18 34h8v8h-8zM34 34h8v8h-8z"/></svg></div>
+                    <p class="icon-name">4 Squares</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><circle cx="30" cy="30" r="15" stroke-dasharray="5 5"/></svg></div>
+                    <p class="icon-name">Dashed Circle</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M15 45 L30 15 L45 45 Z"/></svg></div>
+                    <p class="icon-name">Up Arrow</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="2"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M30 15v30M25 20l5-5 5 5M25 40l5 5 5-5"/></svg></div>
+                    <p class="icon-name">Arrows</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M20 20l20 0 0 20-20 0z" stroke-dasharray="3 3"/></svg></div>
+                    <p class="icon-name">Dotted Box</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M15 30 Q30 10 45 30 Q30 50 15 30"/></svg></div>
+                    <p class="icon-name">Eye</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><circle cx="30" cy="30" r="10"/><circle cx="30" cy="30" r="4" fill="#1a1f3c"/></svg></div>
+                    <p class="icon-name">Bullseye</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="2"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M20 35 L28 43 L40 20"/></svg></div>
+                    <p class="icon-name">Check</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><path d="M20 15v30M30 15v30M40 15v30"/></svg></div>
+                    <p class="icon-name">Three Lines</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="8" y="8" width="44" height="44" rx="4"/><circle cx="22" cy="22" r="4"/><circle cx="38" cy="22" r="4"/><circle cx="22" cy="38" r="4"/><circle cx="38" cy="38" r="4"/><circle cx="30" cy="30" r="4"/></svg></div>
+                    <p class="icon-name">Five Dots</p>
                 </div>
             </div>
         </div>
 
         <!-- Planters -->
         <div class="icon-category" data-category="planters">
-            <h3 class="category-title">Planters</h3>
-            <p class="category-description">Elegant vessel designs that celebrate nature and craftsmanship</p>
+            <div class="category-header">
+                <h3 class="category-title">Planters</h3>
+            </div>
+            <p class="category-description">Elegant vessel silhouettes with textile-inspired decorative patterns</p>
             <div class="icon-grid">
-                <div class="icon-option" data-icon="planter-1" onclick="selectIcon('planters', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <path d="M25 55 L28 30 L52 30 L55 55 Z"/>
-                            <ellipse cx="40" cy="30" rx="14" ry="4"/>
-                            <path d="M35 25 Q32 15 40 12 Q48 15 45 25"/>
-                            <path d="M40 25 L40 18"/>
-                        </svg>
-                    </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M18 50 L22 25 L38 25 L42 50 Z"/><ellipse cx="30" cy="25" rx="10" ry="3"/><path d="M27 20 Q30 12 33 20"/></svg></div>
                     <p class="icon-name">Classic Pot</p>
-                    <p class="icon-style">Traditional</p>
                 </div>
-                <div class="icon-option" data-icon="planter-2" onclick="selectIcon('planters', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <path d="M28 60 Q25 40 40 35 Q55 40 52 60 Z"/>
-                            <path d="M32 30 Q40 20 48 30"/>
-                            <path d="M36 28 Q40 22 44 28"/>
-                            <circle cx="40" cy="45" r="2"/>
-                        </svg>
-                    </div>
-                    <p class="icon-name">Organic Vessel</p>
-                    <p class="icon-style">Modern</p>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M20 50 Q15 35 30 30 Q45 35 40 50 Z"/><path d="M25 25 Q30 15 35 25"/><path d="M28 22 Q30 18 32 22"/></svg></div>
+                    <p class="icon-name">Curved Bowl</p>
                 </div>
-                <div class="icon-option" data-icon="planter-3" onclick="selectIcon('planters', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <rect x="26" y="35" width="28" height="25" rx="2"/>
-                            <path d="M30 35 L30 30 L50 30 L50 35"/>
-                            <path d="M40 30 Q35 20 28 22"/>
-                            <path d="M40 30 Q45 18 52 20"/>
-                            <path d="M40 30 L40 15"/>
-                        </svg>
-                    </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="18" y="28" width="24" height="22" rx="1"/><path d="M22 28v-5h16v5"/><path d="M30 23 Q25 12 20 18M30 23 Q35 12 40 18"/></svg></div>
                     <p class="icon-name">Box Planter</p>
-                    <p class="icon-style">Geometric</p>
                 </div>
-                <div class="icon-option" data-icon="planter-4" onclick="selectIcon('planters', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <circle cx="40" cy="48" r="15"/>
-                            <path d="M35 33 Q30 20 35 15"/>
-                            <path d="M40 33 L40 18"/>
-                            <path d="M45 33 Q50 20 45 15"/>
-                            <ellipse cx="40" cy="33" rx="8" ry="3"/>
-                        </svg>
-                    </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><circle cx="30" cy="38" r="14"/><path d="M26 24 Q22 12 26 10M30 24v-12M34 24 Q38 12 34 10"/></svg></div>
                     <p class="icon-name">Sphere</p>
-                    <p class="icon-style">Contemporary</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M20 50 L15 30 L25 30 L22 20 L38 20 L35 30 L45 30 L40 50 Z"/></svg></div>
+                    <p class="icon-name">Stepped</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M22 50 L22 25 Q22 20 30 20 Q38 20 38 25 L38 50"/><path d="M26 35h8M26 42h8"/></svg></div>
+                    <p class="icon-name">Tall Vase</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M20 50 Q10 40 15 30 L20 30 Q25 35 30 30 Q35 35 40 30 L45 30 Q50 40 40 50 Z"/></svg></div>
+                    <p class="icon-name">Wave Edge</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M22 50 L18 35 L42 35 L38 50 Z"/><path d="M18 35 L22 28 L38 28 L42 35"/><path d="M22 28 L25 22 L35 22 L38 28"/></svg></div>
+                    <p class="icon-name">Tiered</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><ellipse cx="30" cy="42" rx="15" ry="8"/><ellipse cx="30" cy="35" rx="12" ry="6"/><path d="M27 29 Q30 20 33 29"/></svg></div>
+                    <p class="icon-name">Low Bowl</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M25 50 L20 25 Q30 22 40 25 L35 50 Z"/><path d="M22 32h16M22 40h16"/></svg></div>
+                    <p class="icon-name">Striped Pot</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M20 50 L20 40 Q20 32 30 30 Q40 32 40 40 L40 50"/><rect x="18" y="50" width="24" height="3"/><path d="M30 30v-10M25 22l5-5 5 5"/></svg></div>
+                    <p class="icon-name">Pedestal</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M15 50 L20 28 Q30 25 40 28 L45 50 Z"/><path d="M23 35 L30 42 L37 35"/></svg></div>
+                    <p class="icon-name">Chevron Pot</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="15" y="30" width="30" height="20" rx="2"/><path d="M15 38h30M15 46h30"/><rect x="20" y="25" width="20" height="5"/></svg></div>
+                    <p class="icon-name">Rectangular</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M22 50 Q18 40 20 32 Q22 25 30 25 Q38 25 40 32 Q42 40 38 50 Z"/><circle cx="30" cy="35" r="3"/></svg></div>
+                    <p class="icon-name">Dotted Vessel</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M20 50 L22 35 L20 30 L25 25 L35 25 L40 30 L38 35 L40 50 Z"/></svg></div>
+                    <p class="icon-name">Angular</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M18 50 L22 28 L38 28 L42 50"/><ellipse cx="30" cy="28" rx="10" ry="3"/><path d="M15 50h30"/><path d="M25 35h10M25 42h10"/></svg></div>
+                    <p class="icon-name">Banded</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M25 50 L22 35 Q15 30 22 25 L25 25 L27 20 L33 20 L35 25 L38 25 Q45 30 38 35 L35 50 Z"/></svg></div>
+                    <p class="icon-name">Handled</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M20 50 L18 32 L42 32 L40 50 Z"/><path d="M18 32 L22 26 L38 26 L42 32"/><path d="M24 38l6 6 6-6M24 45l6 -6 6 6"/></svg></div>
+                    <p class="icon-name">Diamond Pattern</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><ellipse cx="30" cy="45" rx="18" ry="6"/><ellipse cx="30" cy="40" rx="15" ry="5"/><ellipse cx="30" cy="35" rx="10" ry="3"/><path d="M30 32v-10"/></svg></div>
+                    <p class="icon-name">Layered</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('planters', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M22 50 L20 30 Q30 28 40 30 L38 50 Z"/><path d="M24 35 Q30 40 36 35M24 42 Q30 47 36 42"/></svg></div>
+                    <p class="icon-name">Wave Pattern</p>
                 </div>
             </div>
         </div>
 
         <!-- Artifacts -->
         <div class="icon-category" data-category="artifacts">
-            <h3 class="category-title">Artifacts</h3>
-            <p class="category-description">Curated collectibles and decorative pieces with heritage appeal</p>
+            <div class="category-header">
+                <h3 class="category-title">Artifacts</h3>
+            </div>
+            <p class="category-description">Collectibles and decorative pieces with heritage-inspired textile motifs</p>
             <div class="icon-grid">
-                <div class="icon-option" data-icon="artifact-1" onclick="selectIcon('artifacts', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <path d="M35 60 L35 35 Q35 25 40 20 Q45 25 45 35 L45 60"/>
-                            <path d="M32 60 L48 60"/>
-                            <path d="M30 35 L50 35"/>
-                            <ellipse cx="40" cy="35" rx="10" ry="3"/>
-                        </svg>
-                    </div>
-                    <p class="icon-name">Vase</p>
-                    <p class="icon-style">Classical</p>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M25 50 L25 30 Q25 20 30 15 Q35 20 35 30 L35 50"/><path d="M22 50h16"/><ellipse cx="30" cy="30" rx="5" ry="8"/></svg></div>
+                    <p class="icon-name">Classic Vase</p>
                 </div>
-                <div class="icon-option" data-icon="artifact-2" onclick="selectIcon('artifacts', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <circle cx="40" cy="35" r="15"/>
-                            <path d="M40 50 L40 60"/>
-                            <path d="M32 60 L48 60"/>
-                            <path d="M35 63 L45 63"/>
-                            <path d="M30 30 Q40 25 50 30" stroke-dasharray="2 2"/>
-                        </svg>
-                    </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><circle cx="30" cy="28" r="14"/><path d="M30 42v8"/><path d="M24 50h12"/><path d="M20 24h20" stroke-dasharray="2 2"/></svg></div>
                     <p class="icon-name">Globe</p>
-                    <p class="icon-style">Heritage</p>
                 </div>
-                <div class="icon-option" data-icon="artifact-3" onclick="selectIcon('artifacts', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <rect x="25" y="25" width="30" height="35" rx="2"/>
-                            <rect x="30" y="30" width="20" height="12"/>
-                            <path d="M30 48 L50 48"/>
-                            <path d="M30 52 L45 52"/>
-                            <path d="M30 56 L40 56"/>
-                        </svg>
-                    </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="15" y="12" width="30" height="38" rx="2"/><rect x="20" y="17" width="20" height="14"/><path d="M20 36h20M20 42h15"/></svg></div>
                     <p class="icon-name">Frame</p>
-                    <p class="icon-style">Gallery</p>
                 </div>
-                <div class="icon-option" data-icon="artifact-4" onclick="selectIcon('artifacts', this)">
-                    <div class="icon-display">
-                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
-                            <path d="M20 55 L40 20 L60 55 Z"/>
-                            <circle cx="40" cy="40" r="6"/>
-                            <path d="M40 46 L40 52"/>
-                        </svg>
-                    </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M15 48 L30 12 L45 48 Z"/><path d="M22 48 L30 25 L38 48"/><circle cx="30" cy="35" r="3"/></svg></div>
                     <p class="icon-name">Pyramid</p>
-                    <p class="icon-style">Mystical</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M25 48 Q20 35 25 25 Q30 15 35 25 Q40 35 35 48 Z"/><path d="M28 30h4M28 36h4M28 42h4"/></svg></div>
+                    <p class="icon-name">Amphora</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="18" y="18" width="24" height="24"/><rect x="22" y="22" width="16" height="16"/><path d="M18 18L42 42M42 18L18 42"/></svg></div>
+                    <p class="icon-name">Tile</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><ellipse cx="30" cy="35" rx="18" ry="10"/><path d="M12 35 Q30 15 48 35"/><path d="M30 25v-10"/></svg></div>
+                    <p class="icon-name">Bowl</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M20 15h20v35h-20z"/><path d="M20 22h20M20 29h20M20 36h20M20 43h20"/></svg></div>
+                    <p class="icon-name">Scroll</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><circle cx="30" cy="30" r="16"/><path d="M30 14v32M14 30h32"/><path d="M20 20l20 20M40 20l-20 20"/></svg></div>
+                    <p class="icon-name">Medallion</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M30 10 L45 25 L45 45 L30 50 L15 45 L15 25 Z"/><path d="M30 20 L38 28 L38 40 L30 44 L22 40 L22 28 Z"/></svg></div>
+                    <p class="icon-name">Hexagon</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M22 48 L22 20 Q22 12 30 12 Q38 12 38 20 L38 48"/><path d="M15 48h30"/><path d="M26 25h8M26 32h8M26 39h8"/></svg></div>
+                    <p class="icon-name">Urn</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="12" y="20" width="36" height="25" rx="2"/><path d="M8 20h44M8 45h44"/><path d="M30 12v8M25 14l5-4 5 4"/></svg></div>
+                    <p class="icon-name">Box</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M30 10 L15 30 L30 50 L45 30 Z"/><path d="M30 18 L21 30 L30 42 L39 30 Z"/></svg></div>
+                    <p class="icon-name">Diamond Art</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><ellipse cx="30" cy="38" rx="14" ry="8"/><path d="M16 38 Q16 20 30 15 Q44 20 44 38"/><path d="M23 28h14M23 22h14"/></svg></div>
+                    <p class="icon-name">Jar</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><circle cx="30" cy="30" r="18"/><circle cx="30" cy="30" r="12"/><circle cx="30" cy="30" r="6"/><circle cx="30" cy="30" r="2" fill="#1a1f3c"/></svg></div>
+                    <p class="icon-name">Mandala</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M18 48 L18 22 L30 12 L42 22 L42 48 Z"/><rect x="25" y="32" width="10" height="16"/><circle cx="30" cy="24" r="4"/></svg></div>
+                    <p class="icon-name">Temple</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M15 30 L30 15 L45 30 L30 45 Z"/><path d="M22 30 L30 22 L38 30 L30 38 Z"/><circle cx="30" cy="30" r="3"/></svg></div>
+                    <p class="icon-name">Diamond Tile</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M20 48 L15 25 Q30 20 45 25 L40 48 Z"/><path d="M18 30h24M18 38h24"/><ellipse cx="30" cy="25" rx="15" ry="3"/></svg></div>
+                    <p class="icon-name">Chalice</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><rect x="15" y="15" width="30" height="30"/><path d="M15 15l15 15-15 15"/><path d="M45 15l-15 15 15 15"/></svg></div>
+                    <p class="icon-name">Geo Pattern</p>
+                </div>
+                <div class="icon-option" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display"><svg viewBox="0 0 60 60" fill="none" stroke="#1a1f3c" stroke-width="1.5"><path d="M30 10 L38 22 L52 22 L42 32 L46 46 L30 38 L14 46 L18 32 L8 22 L22 22 Z"/></svg></div>
+                    <p class="icon-name">Star Motif</p>
                 </div>
             </div>
         </div>
@@ -1085,152 +404,211 @@
         <div class="section-header">
             <p class="section-number">02</p>
             <h2 class="section-title">Typography</h2>
-            <p class="section-subtitle">Choose a font pairing that reflects Moire's brand personality</p>
+            <p class="section-subtitle">Select separate fonts for headings and body text to create your perfect combination</p>
         </div>
 
-        <div class="font-options">
-            <!-- Font Option 1 -->
-            <div class="font-option font-1" onclick="selectFont(this)">
-                <div class="font-header">
-                    <div class="font-info">
-                        <h3>Cormorant Garamond + DM Sans</h3>
-                        <span>Elegant serif headlines with clean sans-serif body</span>
+        <!-- Heading Fonts -->
+        <div class="font-type-section heading-fonts">
+            <h3 class="font-type-title">Heading Fonts</h3>
+            <div class="font-grid">
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Cormorant Garamond</p><p class="font-card-style">Elegant Serif</p></div>
+                        <span class="font-card-tag">Classic</span>
                     </div>
-                    <span class="font-tag">Recommended</span>
+                    <p class="font-preview-large" style="font-family: 'Cormorant Garamond', serif;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Cormorant Garamond', serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-                <div class="font-preview">
-                    <h4 class="font-preview-heading">Luxury Living, Artfully Crafted</h4>
-                    <p class="font-preview-body">Discover our curated collection of handcrafted rugs, planters, and artifacts. Each piece tells a story of tradition meeting contemporary design.</p>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Playfair Display</p><p class="font-card-style">Editorial Serif</p></div>
+                        <span class="font-card-tag">Bold</span>
+                    </div>
+                    <p class="font-preview-large" style="font-family: 'Playfair Display', serif;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Playfair Display', serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-                <div class="font-sample">
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Headings</p>
-                        <p class="font-sample-text sample-heading">MOIRE</p>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Libre Baskerville</p><p class="font-card-style">Literary Serif</p></div>
+                        <span class="font-card-tag">Refined</span>
                     </div>
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Body Text</p>
-                        <p class="font-sample-text sample-body">Aa Bb Cc</p>
-                    </div>
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Character</p>
-                        <p class="font-sample-text sample-heading">Timeless</p>
-                    </div>
+                    <p class="font-preview-large" style="font-family: 'Libre Baskerville', serif;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Libre Baskerville', serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-            </div>
-
-            <!-- Font Option 2 -->
-            <div class="font-option font-2" onclick="selectFont(this)">
-                <div class="font-header">
-                    <div class="font-info">
-                        <h3>Playfair Display + Outfit</h3>
-                        <span>Bold editorial serif with modern geometric sans</span>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Fraunces</p><p class="font-card-style">Variable Serif</p></div>
+                        <span class="font-card-tag">Artisan</span>
                     </div>
-                    <span class="font-tag">Editorial</span>
+                    <p class="font-preview-large" style="font-family: 'Fraunces', serif; font-style: italic;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Fraunces', serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-                <div class="font-preview">
-                    <h4 class="font-preview-heading">Luxury Living, Artfully Crafted</h4>
-                    <p class="font-preview-body">Discover our curated collection of handcrafted rugs, planters, and artifacts. Each piece tells a story of tradition meeting contemporary design.</p>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Crimson Pro</p><p class="font-card-style">Modern Serif</p></div>
+                        <span class="font-card-tag">Elegant</span>
+                    </div>
+                    <p class="font-preview-large" style="font-family: 'Crimson Pro', serif;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Crimson Pro', serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-                <div class="font-sample">
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Headings</p>
-                        <p class="font-sample-text sample-heading">MOIRE</p>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Lora</p><p class="font-card-style">Calligraphic Serif</p></div>
+                        <span class="font-card-tag">Warm</span>
                     </div>
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Body Text</p>
-                        <p class="font-sample-text sample-body">Aa Bb Cc</p>
-                    </div>
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Character</p>
-                        <p class="font-sample-text sample-heading">Refined</p>
-                    </div>
+                    <p class="font-preview-large" style="font-family: 'Lora', serif;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Lora', serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-            </div>
-
-            <!-- Font Option 3 -->
-            <div class="font-option font-3" onclick="selectFont(this)">
-                <div class="font-header">
-                    <div class="font-info">
-                        <h3>Libre Baskerville + Manrope</h3>
-                        <span>Classic literary serif with friendly rounded sans</span>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Merriweather</p><p class="font-card-style">Readable Serif</p></div>
+                        <span class="font-card-tag">Sturdy</span>
                     </div>
-                    <span class="font-tag">Classic</span>
+                    <p class="font-preview-large" style="font-family: 'Merriweather', serif;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Merriweather', serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-                <div class="font-preview">
-                    <h4 class="font-preview-heading">Luxury Living, Artfully Crafted</h4>
-                    <p class="font-preview-body">Discover our curated collection of handcrafted rugs, planters, and artifacts. Each piece tells a story of tradition meeting contemporary design.</p>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Source Serif 4</p><p class="font-card-style">Clean Serif</p></div>
+                        <span class="font-card-tag">Modern</span>
+                    </div>
+                    <p class="font-preview-large" style="font-family: 'Source Serif 4', serif;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Source Serif 4', serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-                <div class="font-sample">
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Headings</p>
-                        <p class="font-sample-text sample-heading">MOIRE</p>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Syne</p><p class="font-card-style">Display Sans</p></div>
+                        <span class="font-card-tag">Bold</span>
                     </div>
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Body Text</p>
-                        <p class="font-sample-text sample-body">Aa Bb Cc</p>
-                    </div>
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Character</p>
-                        <p class="font-sample-text sample-heading">Warm</p>
-                    </div>
+                    <p class="font-preview-large" style="font-family: 'Syne', sans-serif; font-weight: 700;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Syne', sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-            </div>
-
-            <!-- Font Option 4 -->
-            <div class="font-option font-4" onclick="selectFont(this)">
-                <div class="font-header">
-                    <div class="font-info">
-                        <h3>Fraunces + DM Sans</h3>
-                        <span>Soft, expressive variable serif with clean sans</span>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Josefin Sans</p><p class="font-card-style">Geometric Sans</p></div>
+                        <span class="font-card-tag">Elegant</span>
                     </div>
-                    <span class="font-tag">Distinctive</span>
+                    <p class="font-preview-large" style="font-family: 'Josefin Sans', sans-serif; font-weight: 300;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Josefin Sans', sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-                <div class="font-preview">
-                    <h4 class="font-preview-heading">Luxury Living, Artfully Crafted</h4>
-                    <p class="font-preview-body">Discover our curated collection of handcrafted rugs, planters, and artifacts. Each piece tells a story of tradition meeting contemporary design.</p>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Raleway</p><p class="font-card-style">Thin Sans</p></div>
+                        <span class="font-card-tag">Luxe</span>
+                    </div>
+                    <p class="font-preview-large" style="font-family: 'Raleway', sans-serif; font-weight: 200;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Raleway', sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
-                <div class="font-sample">
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Headings</p>
-                        <p class="font-sample-text sample-heading">MOIRE</p>
+                <div class="font-card" onclick="selectHeadingFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Montserrat</p><p class="font-card-style">Modern Sans</p></div>
+                        <span class="font-card-tag">Clean</span>
                     </div>
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Body Text</p>
-                        <p class="font-sample-text sample-body">Aa Bb Cc</p>
-                    </div>
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Character</p>
-                        <p class="font-sample-text sample-heading">Artisan</p>
-                    </div>
+                    <p class="font-preview-large" style="font-family: 'Montserrat', sans-serif; font-weight: 300;">MOIRE</p>
+                    <p class="font-alphabet" style="font-family: 'Montserrat', sans-serif;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                 </div>
             </div>
+        </div>
 
-            <!-- Font Option 5 -->
-            <div class="font-option font-5" onclick="selectFont(this)">
-                <div class="font-header">
-                    <div class="font-info">
-                        <h3>Syne + DM Sans</h3>
-                        <span>Bold, modern display sans with clean body text</span>
+        <!-- Body Fonts -->
+        <div class="font-type-section body-fonts">
+            <h3 class="font-type-title">Body Fonts</h3>
+            <div class="font-grid">
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">DM Sans</p><p class="font-card-style">Geometric Sans</p></div>
+                        <span class="font-card-tag">Clean</span>
                     </div>
-                    <span class="font-tag">Contemporary</span>
+                    <p class="font-preview-text" style="font-family: 'DM Sans', sans-serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'DM Sans', sans-serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
                 </div>
-                <div class="font-preview">
-                    <h4 class="font-preview-heading">Luxury Living, Artfully Crafted</h4>
-                    <p class="font-preview-body">Discover our curated collection of handcrafted rugs, planters, and artifacts. Each piece tells a story of tradition meeting contemporary design.</p>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Outfit</p><p class="font-card-style">Modern Sans</p></div>
+                        <span class="font-card-tag">Friendly</span>
+                    </div>
+                    <p class="font-preview-text" style="font-family: 'Outfit', sans-serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Outfit', sans-serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
                 </div>
-                <div class="font-sample">
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Headings</p>
-                        <p class="font-sample-text sample-heading">MOIRE</p>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Manrope</p><p class="font-card-style">Rounded Sans</p></div>
+                        <span class="font-card-tag">Soft</span>
                     </div>
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Body Text</p>
-                        <p class="font-sample-text sample-body">Aa Bb Cc</p>
+                    <p class="font-preview-text" style="font-family: 'Manrope', sans-serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Manrope', sans-serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
+                </div>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Work Sans</p><p class="font-card-style">Versatile Sans</p></div>
+                        <span class="font-card-tag">Neutral</span>
                     </div>
-                    <div class="font-sample-item">
-                        <p class="font-sample-label">Character</p>
-                        <p class="font-sample-text sample-heading">Bold</p>
+                    <p class="font-preview-text" style="font-family: 'Work Sans', sans-serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Work Sans', sans-serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
+                </div>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Nunito</p><p class="font-card-style">Rounded Sans</p></div>
+                        <span class="font-card-tag">Warm</span>
                     </div>
+                    <p class="font-preview-text" style="font-family: 'Nunito', sans-serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Nunito', sans-serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
+                </div>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Poppins</p><p class="font-card-style">Geometric Sans</p></div>
+                        <span class="font-card-tag">Popular</span>
+                    </div>
+                    <p class="font-preview-text" style="font-family: 'Poppins', sans-serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Poppins', sans-serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
+                </div>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Raleway</p><p class="font-card-style">Elegant Sans</p></div>
+                        <span class="font-card-tag">Refined</span>
+                    </div>
+                    <p class="font-preview-text" style="font-family: 'Raleway', sans-serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Raleway', sans-serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
+                </div>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Montserrat</p><p class="font-card-style">Classic Sans</p></div>
+                        <span class="font-card-tag">Timeless</span>
+                    </div>
+                    <p class="font-preview-text" style="font-family: 'Montserrat', sans-serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Montserrat', sans-serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
+                </div>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Lora</p><p class="font-card-style">Body Serif</p></div>
+                        <span class="font-card-tag">Literary</span>
+                    </div>
+                    <p class="font-preview-text" style="font-family: 'Lora', serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Lora', serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
+                </div>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Crimson Pro</p><p class="font-card-style">Reading Serif</p></div>
+                        <span class="font-card-tag">Classic</span>
+                    </div>
+                    <p class="font-preview-text" style="font-family: 'Crimson Pro', serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Crimson Pro', serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
+                </div>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Source Serif 4</p><p class="font-card-style">Text Serif</p></div>
+                        <span class="font-card-tag">Readable</span>
+                    </div>
+                    <p class="font-preview-text" style="font-family: 'Source Serif 4', serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Source Serif 4', serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
+                </div>
+                <div class="font-card" onclick="selectBodyFont(this)">
+                    <div class="font-card-header">
+                        <div><p class="font-card-name">Merriweather</p><p class="font-card-style">Screen Serif</p></div>
+                        <span class="font-card-tag">Sturdy</span>
+                    </div>
+                    <p class="font-preview-text" style="font-family: 'Merriweather', serif;">Discover our curated collection of handcrafted rugs, planters, and artifacts.</p>
+                    <p class="font-alphabet" style="font-family: 'Merriweather', serif;">abcdefghijklmnopqrstuvwxyz 0123456789</p>
                 </div>
             </div>
         </div>
@@ -1241,26 +619,34 @@
         <div class="section-header">
             <p class="section-number">03</p>
             <h2 class="section-title">Footer Color</h2>
-            <p class="section-subtitle">Select a footer color from your brand palette. See the live preview as you choose.</p>
+            <p class="section-subtitle">Use the color wheel or select from the brand palette. See the live preview update.</p>
         </div>
 
         <div class="color-picker-container">
             <div class="color-wheel-wrapper">
-                <h3 class="color-wheel-title">Brand Palette</h3>
+                <h3 class="color-wheel-title">Custom Color Wheel</h3>
                 
-                <div class="preset-colors">
-                    <div class="preset-color preset-dark-blue selected" data-color="#1a1f3c" onclick="selectPresetColor(this)"></div>
-                    <div class="preset-color preset-dark-blue-light" data-color="#2a3158" onclick="selectPresetColor(this)"></div>
-                    <div class="preset-color preset-beige" data-color="#f5f0e8" onclick="selectPresetColor(this)"></div>
-                    <div class="preset-color preset-beige-dark" data-color="#e8e0d0" onclick="selectPresetColor(this)"></div>
-                    <div class="preset-color preset-white" data-color="#ffffff" onclick="selectPresetColor(this)"></div>
+                <div class="color-wheel-container">
+                    <canvas id="colorWheel" width="300" height="300"></canvas>
+                    <div class="color-pointer"></div>
                 </div>
-                <div class="preset-labels">
-                    <span class="preset-label">Dark Blue</span>
-                    <span class="preset-label">Blue Light</span>
-                    <span class="preset-label">Beige</span>
-                    <span class="preset-label">Beige Dark</span>
-                    <span class="preset-label">White</span>
+
+                <div class="brightness-slider">
+                    <label>Brightness</label>
+                    <input type="range" id="brightnessSlider" min="10" max="100" value="50" oninput="handleWheelClick(event)">
+                </div>
+
+                <h4 style="font-size: 0.9rem; color: var(--text-light); margin: 2rem 0 1rem;">Brand Palette</h4>
+                <div class="preset-colors">
+                    <div class="preset-color selected" style="background: #1a1f3c;" data-color="#1a1f3c" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color" style="background: #2a3158;" data-color="#2a3158" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color" style="background: #0d1020;" data-color="#0d1020" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color" style="background: #3d4470;" data-color="#3d4470" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color" style="background: #f5f0e8; border: 1px solid #ddd;" data-color="#f5f0e8" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color" style="background: #e8e0d0; border: 1px solid #ddd;" data-color="#e8e0d0" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color" style="background: #d4c9b8; border: 1px solid #ccc;" data-color="#d4c9b8" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color" style="background: #ffffff; border: 1px solid #ddd;" data-color="#ffffff" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color" style="background: #faf8f5; border: 1px solid #ddd;" data-color="#faf8f5" onclick="selectPresetColor(this)"></div>
                 </div>
 
                 <div class="custom-color-input">
@@ -1270,8 +656,11 @@
                 </div>
 
                 <div class="selected-color-display">
-                    <span>Selected Color:</span>
-                    <strong id="selectedColorValue">#1a1f3c</strong>
+                    <div class="selected-color-preview" id="selectedColorPreview" style="background: #1a1f3c;"></div>
+                    <div>
+                        <span>Selected:</span>
+                        <strong id="selectedColorValue">#1a1f3c</strong>
+                    </div>
                 </div>
             </div>
 
@@ -1282,18 +671,9 @@
                         <div class="footer-top">
                             <div class="footer-brand">
                                 <h4>MOIRE</h4>
-                                <p>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                                    1093 Hood Avenue, CA
-                                </p>
-                                <p>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                    +(123)-456-7890
-                                </p>
-                                <p>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                                    Emillia@example.com
-                                </p>
+                                <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>1093 Hood Avenue, CA</p>
+                                <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+(123)-456-7890</p>
+                                <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Emillia@example.com</p>
                             </div>
                             <div class="footer-links">
                                 <h5>My Account</h5>
@@ -1317,15 +697,9 @@
                         <div class="footer-bottom">
                             <div class="footer-payments">We Accept Payments</div>
                             <div class="footer-social">
-                                <a href="#" style="color: inherit;">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                                </a>
-                                <a href="#" style="color: inherit;">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
-                                </a>
-                                <a href="#" style="color: inherit;">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-                                </a>
+                                <a href="#" style="color: inherit;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                                <a href="#" style="color: inherit;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                                <a href="#" style="color: inherit;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
                             </div>
                         </div>
                     </div>
@@ -1345,8 +719,12 @@
                 </div>
             </div>
             <div class="summary-card">
-                <h4>Typography</h4>
-                <p class="value" id="summaryFont">Select a font pairing above</p>
+                <h4>Heading Font</h4>
+                <p class="value" id="summaryHeadingFont">Not selected</p>
+            </div>
+            <div class="summary-card">
+                <h4>Body Font</h4>
+                <p class="value" id="summaryBodyFont">Not selected</p>
             </div>
             <div class="summary-card">
                 <h4>Footer Color</h4>
@@ -1356,164 +734,6 @@
         <button class="export-btn" onclick="exportSelections()">Export Selections</button>
     </section>
 
-    <script>
-        // State management
-        const selections = {
-            icons: {},
-            font: null,
-            footerColor: '#1a1f3c'
-        };
-
-        // Icon Selection
-        function selectIcon(category, element) {
-            const categoryEl = document.querySelector(`[data-category="${category}"]`);
-            categoryEl.querySelectorAll('.icon-option').forEach(opt => opt.classList.remove('selected'));
-            element.classList.add('selected');
-            
-            const iconName = element.querySelector('.icon-name').textContent;
-            const iconSvg = element.querySelector('.icon-display').innerHTML;
-            selections.icons[category] = { name: iconName, svg: iconSvg };
-            
-            updateSummary();
-        }
-
-        // Font Selection
-        function selectFont(element) {
-            document.querySelectorAll('.font-option').forEach(opt => opt.classList.remove('selected'));
-            element.classList.add('selected');
-            
-            const fontName = element.querySelector('.font-info h3').textContent;
-            selections.font = fontName;
-            
-            updateSummary();
-        }
-
-        // Color Selection
-        function selectPresetColor(element) {
-            document.querySelectorAll('.preset-color').forEach(opt => opt.classList.remove('selected'));
-            element.classList.add('selected');
-            
-            const color = element.dataset.color;
-            updateFooterColor(color);
-        }
-
-        function updateCustomColor(color) {
-            document.querySelectorAll('.preset-color').forEach(opt => opt.classList.remove('selected'));
-            document.getElementById('colorHex').value = color;
-            updateFooterColor(color);
-        }
-
-        function updateFromHex(value) {
-            if (/^#[0-9A-Fa-f]{6}$/.test(value)) {
-                document.querySelectorAll('.preset-color').forEach(opt => opt.classList.remove('selected'));
-                document.getElementById('customColor').value = value;
-                updateFooterColor(value);
-            }
-        }
-
-        function updateFooterColor(color) {
-            const footer = document.getElementById('footerPreview');
-            footer.style.backgroundColor = color;
-            
-            // Determine text color based on background brightness
-            const rgb = hexToRgb(color);
-            const brightness = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
-            const textColor = brightness > 128 ? '#1a1f3c' : '#ffffff';
-            footer.style.color = textColor;
-            
-            // Update border for light colors
-            if (brightness > 200) {
-                footer.style.border = '1px solid #e8e0d0';
-            } else {
-                footer.style.border = 'none';
-            }
-            
-            document.getElementById('selectedColorValue').textContent = color;
-            document.getElementById('colorHex').value = color;
-            document.getElementById('customColor').value = color;
-            
-            selections.footerColor = color;
-            updateSummary();
-        }
-
-        function hexToRgb(hex) {
-            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-            return result ? {
-                r: parseInt(result[1], 16),
-                g: parseInt(result[2], 16),
-                b: parseInt(result[3], 16)
-            } : { r: 0, g: 0, b: 0 };
-        }
-
-        function getColorName(hex) {
-            const colorNames = {
-                '#1a1f3c': 'Dark Blue',
-                '#2a3158': 'Blue Light',
-                '#f5f0e8': 'Beige',
-                '#e8e0d0': 'Beige Dark',
-                '#ffffff': 'White'
-            };
-            return colorNames[hex.toLowerCase()] || 'Custom';
-        }
-
-        // Update Summary
-        function updateSummary() {
-            // Icons
-            const iconsSummary = document.getElementById('summaryIcons');
-            const iconCategories = Object.keys(selections.icons);
-            
-            if (iconCategories.length > 0) {
-                iconsSummary.innerHTML = iconCategories.map(cat => {
-                    const icon = selections.icons[cat];
-                    const categoryName = cat.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
-                    return `
-                        <div class="summary-icon-item">
-                            <div style="width: 30px; height: 30px;">${icon.svg.replace('stroke="#1a1f3c"', 'stroke="currentColor"').replace('fill="#1a1f3c"', 'fill="currentColor"')}</div>
-                            <span>${categoryName}</span>
-                        </div>
-                    `;
-                }).join('');
-            }
-            
-            // Font
-            const fontSummary = document.getElementById('summaryFont');
-            fontSummary.textContent = selections.font || 'Select a font pairing above';
-            
-            // Color
-            const colorSummary = document.getElementById('summaryColor');
-            const colorName = getColorName(selections.footerColor);
-            colorSummary.innerHTML = `<span style="display: inline-block; width: 20px; height: 20px; background: ${selections.footerColor}; border-radius: 4px; vertical-align: middle; margin-right: 8px; border: 1px solid rgba(255,255,255,0.2);"></span>${selections.footerColor} (${colorName})`;
-        }
-
-        // Export Selections
-        function exportSelections() {
-            const exportData = {
-                icons: Object.entries(selections.icons).map(([cat, icon]) => ({
-                    category: cat.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()),
-                    selected: icon.name
-                })),
-                typography: selections.font,
-                footerColor: {
-                    hex: selections.footerColor,
-                    name: getColorName(selections.footerColor)
-                },
-                exportDate: new Date().toISOString()
-            };
-            
-            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'moire-selections.json';
-            a.click();
-            URL.revokeObjectURL(url);
-            
-            alert('Selections exported! Check your downloads folder for moire-selections.json');
-        }
-
-        // Initialize
-        updateSummary();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
