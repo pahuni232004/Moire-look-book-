@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOIRE | Look Book</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&family=Manrope:wght@200..800&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #1a1f3c;
+            --dark-blue-light: #2a3158;
+            --beige: #f5f0e8;
+            --beige-dark: #e8e0d0;
+            --white: #ffffff;
+            --accent-gold: #c9a86c;
+            --text-dark: #1a1f3c;
+            --text-light: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--beige);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--dark-blue-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(201, 168, 108, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(245, 240, 232, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 3rem;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--accent-gold);
+            margin: 2rem auto;
+        }
+
+        .hero-description {
+            max-width: 500px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Icons Section */
+        .icons-section {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 4rem;
+            margin: 2rem;
+            box-shadow: 0 20px 60px rgba(26, 31, 60, 0.08);
+        }
+
+        .icon-category {
+            margin-bottom: 4rem;
+        }
+
+        .icon-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--dark-blue);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .category-title::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--accent-gold);
+        }
+
+        .category-description {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-left: 46px;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .icon-option {
+            background: var(--beige);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .icon-option:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(26, 31, 60, 0.1);
+        }
+
+        .icon-option.selected {
+            border-color: var(--accent-gold);
+            background: rgba(201, 168, 108, 0.1);
+        }
+
+        .icon-option.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            background: var(--accent-gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .icon-display {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-display svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .icon-name {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--dark-blue);
+            letter-spacing: 1px;
+        }
+
+        .icon-style {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        /* Typography Section */
+        .typography-section {
+            padding: 6rem 2rem;
+        }
+
+        .font-options {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .font-option {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 40px rgba(26, 31, 60, 0.06);
+        }
+
+        .font-option:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(26, 31, 60, 0.1);
+        }
+
+        .font-option.selected {
+            border-color: var(--accent-gold);
+        }
+
+        .font-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--beige-dark);
+        }
+
+        .font-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 0.25rem;
+        }
+
+        .font-info span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .font-tag {
+            padding: 0.4rem 1rem;
+            background: var(--beige);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--dark-blue);
+        }
+
+        .font-preview {
+            margin-bottom: 1.5rem;
+        }
+
+        .font-preview-heading {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .font-preview-body {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .font-sample {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--beige-dark);
+        }
+
+        .font-sample-item {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .font-sample-label {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .font-sample-text {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        /* Specific Font Families */
+        .font-1 .font-preview-heading { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        .font-1 .font-preview-body { font-family: 'DM Sans', sans-serif; }
+        .font-1 .sample-heading { font-family: 'Cormorant Garamond', serif; }
+        .font-1 .sample-body { font-family: 'DM Sans', sans-serif; }
+
+        .font-2 .font-preview-heading { font-family: 'Playfair Display', serif; font-weight: 500; }
+        .font-2 .font-preview-body { font-family: 'Outfit', sans-serif; }
+        .font-2 .sample-heading { font-family: 'Playfair Display', serif; }
+        .font-2 .sample-body { font-family: 'Outfit', sans-serif; }
+
+        .font-3 .font-preview-heading { font-family: 'Libre Baskerville', serif; font-weight: 400; }
+        .font-3 .font-preview-body { font-family: 'Manrope', sans-serif; }
+        .font-3 .sample-heading { font-family: 'Libre Baskerville', serif; }
+        .font-3 .sample-body { font-family: 'Manrope', sans-serif; }
+
+        .font-4 .font-preview-heading { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; }
+        .font-4 .font-preview-body { font-family: 'DM Sans', sans-serif; }
+        .font-4 .sample-heading { font-family: 'Fraunces', serif; }
+        .font-4 .sample-body { font-family: 'DM Sans', sans-serif; }
+
+        .font-5 .font-preview-heading { font-family: 'Syne', sans-serif; font-weight: 600; }
+        .font-5 .font-preview-body { font-family: 'DM Sans', sans-serif; }
+        .font-5 .sample-heading { font-family: 'Syne', sans-serif; }
+        .font-5 .sample-body { font-family: 'DM Sans', sans-serif; }
+
+        /* Footer Color Section */
+        .footer-section {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 4rem;
+            margin: 2rem;
+            box-shadow: 0 20px 60px rgba(26, 31, 60, 0.08);
+        }
+
+        .color-picker-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .color-picker-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .color-wheel-wrapper {
+            text-align: center;
+        }
+
+        .color-wheel-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .color-wheel {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            background: conic-gradient(
+                from 0deg,
+                #1a1f3c,
+                #2a3158,
+                #3d4470,
+                #1a1f3c,
+                #0d1020,
+                #1a1f3c
+            );
+            cursor: crosshair;
+            box-shadow: 0 10px 40px rgba(26, 31, 60, 0.2);
+        }
+
+        .color-wheel::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+            background: conic-gradient(
+                from 0deg,
+                #f5f0e8,
+                #e8e0d0,
+                #d4c9b8,
+                #f5f0e8,
+                #fffaf5,
+                #f5f0e8
+            );
+        }
+
+        .color-wheel::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 25%;
+            height: 25%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffffff, #f8f8f8);
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .color-pointer {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            pointer-events: none;
+            top: 20%;
+            left: 50%;
+        }
+
+        .preset-colors {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .preset-color {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            position: relative;
+        }
+
+        .preset-color:hover {
+            transform: scale(1.1);
+        }
+
+        .preset-color.selected {
+            border-color: var(--accent-gold);
+        }
+
+        .preset-color.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.2rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .preset-dark-blue { background: var(--dark-blue); }
+        .preset-dark-blue-light { background: var(--dark-blue-light); }
+        .preset-beige { background: var(--beige); border: 1px solid #ddd; }
+        .preset-beige.selected::after { color: var(--dark-blue); text-shadow: none; }
+        .preset-beige-dark { background: var(--beige-dark); border: 1px solid #ccc; }
+        .preset-beige-dark.selected::after { color: var(--dark-blue); text-shadow: none; }
+        .preset-white { background: var(--white); border: 1px solid #ddd; }
+        .preset-white.selected::after { color: var(--dark-blue); text-shadow: none; }
+
+        .preset-labels {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .preset-label {
+            width: 50px;
+            font-size: 0.6rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .custom-color-input {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .custom-color-input label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .custom-color-input input[type="color"] {
+            width: 50px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: none;
+        }
+
+        .custom-color-input input[type="text"] {
+            width: 100px;
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--beige-dark);
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Footer Preview */
+        .footer-preview-wrapper h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .footer-preview {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(26, 31, 60, 0.15);
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-content {
+            padding: 3rem 2.5rem 2rem;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.8rem;
+            line-height: 1.8;
+            opacity: 0.7;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-brand p svg {
+            width: 14px;
+            height: 14px;
+            opacity: 0.7;
+        }
+
+        .footer-links h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            font-size: 0.8rem;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-payments {
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .footer-social a {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .footer-social a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .footer-social svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .selected-color-display {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--beige);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .selected-color-display span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .selected-color-display strong {
+            font-family: monospace;
+            color: var(--dark-blue);
+            margin-left: 0.5rem;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--dark-blue-light) 100%);
+            color: var(--white);
+            padding: 4rem;
+            margin: 2rem;
+            border-radius: 24px;
+        }
+
+        .summary-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .summary-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .summary-card h4 {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .summary-card .value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+        }
+
+        .summary-icons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .summary-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+
+        .summary-icon-item svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .summary-icon-item span {
+            font-size: 0.65rem;
+            opacity: 0.7;
+        }
+
+        .export-btn {
+            display: block;
+            width: fit-content;
+            margin: 3rem auto 0;
+            padding: 1rem 3rem;
+            background: var(--accent-gold);
+            color: var(--dark-blue);
+            border: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 108, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .icons-section,
+            .footer-section,
+            .summary-section {
+                margin: 1rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .color-picker-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Design System</span>
+            <h1>MOIRE</h1>
+            <p class="hero-subtitle">Look Book 2025</p>
+            <div class="hero-divider"></div>
+            <p class="hero-description">
+                A curated selection of design elements for your brand identity. 
+                Please review and select your preferences for icons, typography, and color scheme.
+            </p>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Icons Section -->
+    <section class="icons-section" id="icons">
+        <div class="section-header">
+            <p class="section-number">01</p>
+            <h2 class="section-title">Category Icons</h2>
+            <p class="section-subtitle">Select an icon style for each product category. Click to select your preferred option.</p>
+        </div>
+
+        <!-- Abstract Rugs -->
+        <div class="icon-category" data-category="abstract-rugs">
+            <h3 class="category-title">Abstract Rugs</h3>
+            <p class="category-description">Artistic, fluid designs representing the abstract nature of these rugs</p>
+            <div class="icon-grid">
+                <div class="icon-option" data-icon="abstract-1" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <circle cx="40" cy="40" r="30" />
+                            <path d="M20 40 Q30 20 40 40 Q50 60 60 40" />
+                            <path d="M40 20 Q20 30 40 40 Q60 50 40 60" />
+                        </svg>
+                    </div>
+                    <p class="icon-name">Waves</p>
+                    <p class="icon-style">Minimal Line</p>
+                </div>
+                <div class="icon-option" data-icon="abstract-2" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <rect x="15" y="15" width="50" height="50" rx="4"/>
+                            <path d="M25 55 Q35 25 55 35 Q45 55 55 55"/>
+                            <circle cx="30" cy="30" r="5"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Organic</p>
+                    <p class="icon-style">Artistic</p>
+                </div>
+                <div class="icon-option" data-icon="abstract-3" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <rect x="20" y="20" width="40" height="40" rx="3" fill="#1a1f3c" opacity="0.1"/>
+                            <path d="M25 50 Q40 20 55 50" stroke="#1a1f3c" stroke-width="2" fill="none"/>
+                            <path d="M30 55 Q40 35 50 55" stroke="#1a1f3c" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Layers</p>
+                    <p class="icon-style">Geometric</p>
+                </div>
+                <div class="icon-option" data-icon="abstract-4" onclick="selectIcon('abstract-rugs', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <path d="M20 60 C20 30 35 20 40 20 C45 20 60 30 60 60"/>
+                            <path d="M28 60 C28 40 35 32 40 32 C45 32 52 40 52 60"/>
+                            <path d="M36 60 C36 50 38 45 40 45 C42 45 44 50 44 60"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Contours</p>
+                    <p class="icon-style">Topographic</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GenZ Rugs -->
+        <div class="icon-category" data-category="genz-rugs">
+            <h3 class="category-title">GenZ Rugs</h3>
+            <p class="category-description">Bold, contemporary designs with a youthful energy</p>
+            <div class="icon-grid">
+                <div class="icon-option" data-icon="genz-1" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <rect x="18" y="18" width="44" height="44" rx="8" stroke="#1a1f3c" stroke-width="2"/>
+                            <path d="M30 40 L38 48 L50 32" stroke="#1a1f3c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Vibe Check</p>
+                    <p class="icon-style">Bold</p>
+                </div>
+                <div class="icon-option" data-icon="genz-2" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="22" stroke="#1a1f3c" stroke-width="2"/>
+                            <path d="M32 35 Q40 45 48 35" stroke="#1a1f3c" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="32" cy="35" r="2" fill="#1a1f3c"/>
+                            <circle cx="48" cy="35" r="2" fill="#1a1f3c"/>
+                            <path d="M35 48 Q40 52 45 48" stroke="#1a1f3c" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Smiley</p>
+                    <p class="icon-style">Playful</p>
+                </div>
+                <div class="icon-option" data-icon="genz-3" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="2">
+                            <path d="M40 18 L45 32 L60 32 L48 42 L52 57 L40 48 L28 57 L32 42 L20 32 L35 32 Z"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Star</p>
+                    <p class="icon-style">Iconic</p>
+                </div>
+                <div class="icon-option" data-icon="genz-4" onclick="selectIcon('genz-rugs', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <rect x="22" y="22" width="36" height="36" rx="4" fill="#1a1f3c" opacity="0.1"/>
+                            <rect x="22" y="22" width="36" height="36" rx="4" stroke="#1a1f3c" stroke-width="2"/>
+                            <path d="M32 40 L40 32 L48 40 L40 48 Z" stroke="#1a1f3c" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Diamond</p>
+                    <p class="icon-style">Minimal</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Planters -->
+        <div class="icon-category" data-category="planters">
+            <h3 class="category-title">Planters</h3>
+            <p class="category-description">Elegant vessel designs that celebrate nature and craftsmanship</p>
+            <div class="icon-grid">
+                <div class="icon-option" data-icon="planter-1" onclick="selectIcon('planters', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <path d="M25 55 L28 30 L52 30 L55 55 Z"/>
+                            <ellipse cx="40" cy="30" rx="14" ry="4"/>
+                            <path d="M35 25 Q32 15 40 12 Q48 15 45 25"/>
+                            <path d="M40 25 L40 18"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Classic Pot</p>
+                    <p class="icon-style">Traditional</p>
+                </div>
+                <div class="icon-option" data-icon="planter-2" onclick="selectIcon('planters', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <path d="M28 60 Q25 40 40 35 Q55 40 52 60 Z"/>
+                            <path d="M32 30 Q40 20 48 30"/>
+                            <path d="M36 28 Q40 22 44 28"/>
+                            <circle cx="40" cy="45" r="2"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Organic Vessel</p>
+                    <p class="icon-style">Modern</p>
+                </div>
+                <div class="icon-option" data-icon="planter-3" onclick="selectIcon('planters', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <rect x="26" y="35" width="28" height="25" rx="2"/>
+                            <path d="M30 35 L30 30 L50 30 L50 35"/>
+                            <path d="M40 30 Q35 20 28 22"/>
+                            <path d="M40 30 Q45 18 52 20"/>
+                            <path d="M40 30 L40 15"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Box Planter</p>
+                    <p class="icon-style">Geometric</p>
+                </div>
+                <div class="icon-option" data-icon="planter-4" onclick="selectIcon('planters', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <circle cx="40" cy="48" r="15"/>
+                            <path d="M35 33 Q30 20 35 15"/>
+                            <path d="M40 33 L40 18"/>
+                            <path d="M45 33 Q50 20 45 15"/>
+                            <ellipse cx="40" cy="33" rx="8" ry="3"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Sphere</p>
+                    <p class="icon-style">Contemporary</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artifacts -->
+        <div class="icon-category" data-category="artifacts">
+            <h3 class="category-title">Artifacts</h3>
+            <p class="category-description">Curated collectibles and decorative pieces with heritage appeal</p>
+            <div class="icon-grid">
+                <div class="icon-option" data-icon="artifact-1" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <path d="M35 60 L35 35 Q35 25 40 20 Q45 25 45 35 L45 60"/>
+                            <path d="M32 60 L48 60"/>
+                            <path d="M30 35 L50 35"/>
+                            <ellipse cx="40" cy="35" rx="10" ry="3"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Vase</p>
+                    <p class="icon-style">Classical</p>
+                </div>
+                <div class="icon-option" data-icon="artifact-2" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <circle cx="40" cy="35" r="15"/>
+                            <path d="M40 50 L40 60"/>
+                            <path d="M32 60 L48 60"/>
+                            <path d="M35 63 L45 63"/>
+                            <path d="M30 30 Q40 25 50 30" stroke-dasharray="2 2"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Globe</p>
+                    <p class="icon-style">Heritage</p>
+                </div>
+                <div class="icon-option" data-icon="artifact-3" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <rect x="25" y="25" width="30" height="35" rx="2"/>
+                            <rect x="30" y="30" width="20" height="12"/>
+                            <path d="M30 48 L50 48"/>
+                            <path d="M30 52 L45 52"/>
+                            <path d="M30 56 L40 56"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Frame</p>
+                    <p class="icon-style">Gallery</p>
+                </div>
+                <div class="icon-option" data-icon="artifact-4" onclick="selectIcon('artifacts', this)">
+                    <div class="icon-display">
+                        <svg viewBox="0 0 80 80" fill="none" stroke="#1a1f3c" stroke-width="1.5">
+                            <path d="M20 55 L40 20 L60 55 Z"/>
+                            <circle cx="40" cy="40" r="6"/>
+                            <path d="M40 46 L40 52"/>
+                        </svg>
+                    </div>
+                    <p class="icon-name">Pyramid</p>
+                    <p class="icon-style">Mystical</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section class="typography-section" id="typography">
+        <div class="section-header">
+            <p class="section-number">02</p>
+            <h2 class="section-title">Typography</h2>
+            <p class="section-subtitle">Choose a font pairing that reflects Moire's brand personality</p>
+        </div>
+
+        <div class="font-options">
+            <!-- Font Option 1 -->
+            <div class="font-option font-1" onclick="selectFont(this)">
+                <div class="font-header">
+                    <div class="font-info">
+                        <h3>Cormorant Garamond + DM Sans</h3>
+                        <span>Elegant serif headlines with clean sans-serif body</span>
+                    </div>
+                    <span class="font-tag">Recommended</span>
+                </div>
+                <div class="font-preview">
+                    <h4 class="font-preview-heading">Luxury Living, Artfully Crafted</h4>
+                    <p class="font-preview-body">Discover our curated collection of handcrafted rugs, planters, and artifacts. Each piece tells a story of tradition meeting contemporary design.</p>
+                </div>
+                <div class="font-sample">
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Headings</p>
+                        <p class="font-sample-text sample-heading">MOIRE</p>
+                    </div>
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Body Text</p>
+                        <p class="font-sample-text sample-body">Aa Bb Cc</p>
+                    </div>
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Character</p>
+                        <p class="font-sample-text sample-heading">Timeless</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Font Option 2 -->
+            <div class="font-option font-2" onclick="selectFont(this)">
+                <div class="font-header">
+                    <div class="font-info">
+                        <h3>Playfair Display + Outfit</h3>
+                        <span>Bold editorial serif with modern geometric sans</span>
+                    </div>
+                    <span class="font-tag">Editorial</span>
+                </div>
+                <div class="font-preview">
+                    <h4 class="font-preview-heading">Luxury Living, Artfully Crafted</h4>
+                    <p class="font-preview-body">Discover our curated collection of handcrafted rugs, planters, and artifacts. Each piece tells a story of tradition meeting contemporary design.</p>
+                </div>
+                <div class="font-sample">
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Headings</p>
+                        <p class="font-sample-text sample-heading">MOIRE</p>
+                    </div>
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Body Text</p>
+                        <p class="font-sample-text sample-body">Aa Bb Cc</p>
+                    </div>
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Character</p>
+                        <p class="font-sample-text sample-heading">Refined</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Font Option 3 -->
+            <div class="font-option font-3" onclick="selectFont(this)">
+                <div class="font-header">
+                    <div class="font-info">
+                        <h3>Libre Baskerville + Manrope</h3>
+                        <span>Classic literary serif with friendly rounded sans</span>
+                    </div>
+                    <span class="font-tag">Classic</span>
+                </div>
+                <div class="font-preview">
+                    <h4 class="font-preview-heading">Luxury Living, Artfully Crafted</h4>
+                    <p class="font-preview-body">Discover our curated collection of handcrafted rugs, planters, and artifacts. Each piece tells a story of tradition meeting contemporary design.</p>
+                </div>
+                <div class="font-sample">
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Headings</p>
+                        <p class="font-sample-text sample-heading">MOIRE</p>
+                    </div>
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Body Text</p>
+                        <p class="font-sample-text sample-body">Aa Bb Cc</p>
+                    </div>
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Character</p>
+                        <p class="font-sample-text sample-heading">Warm</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Font Option 4 -->
+            <div class="font-option font-4" onclick="selectFont(this)">
+                <div class="font-header">
+                    <div class="font-info">
+                        <h3>Fraunces + DM Sans</h3>
+                        <span>Soft, expressive variable serif with clean sans</span>
+                    </div>
+                    <span class="font-tag">Distinctive</span>
+                </div>
+                <div class="font-preview">
+                    <h4 class="font-preview-heading">Luxury Living, Artfully Crafted</h4>
+                    <p class="font-preview-body">Discover our curated collection of handcrafted rugs, planters, and artifacts. Each piece tells a story of tradition meeting contemporary design.</p>
+                </div>
+                <div class="font-sample">
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Headings</p>
+                        <p class="font-sample-text sample-heading">MOIRE</p>
+                    </div>
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Body Text</p>
+                        <p class="font-sample-text sample-body">Aa Bb Cc</p>
+                    </div>
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Character</p>
+                        <p class="font-sample-text sample-heading">Artisan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Font Option 5 -->
+            <div class="font-option font-5" onclick="selectFont(this)">
+                <div class="font-header">
+                    <div class="font-info">
+                        <h3>Syne + DM Sans</h3>
+                        <span>Bold, modern display sans with clean body text</span>
+                    </div>
+                    <span class="font-tag">Contemporary</span>
+                </div>
+                <div class="font-preview">
+                    <h4 class="font-preview-heading">Luxury Living, Artfully Crafted</h4>
+                    <p class="font-preview-body">Discover our curated collection of handcrafted rugs, planters, and artifacts. Each piece tells a story of tradition meeting contemporary design.</p>
+                </div>
+                <div class="font-sample">
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Headings</p>
+                        <p class="font-sample-text sample-heading">MOIRE</p>
+                    </div>
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Body Text</p>
+                        <p class="font-sample-text sample-body">Aa Bb Cc</p>
+                    </div>
+                    <div class="font-sample-item">
+                        <p class="font-sample-label">Character</p>
+                        <p class="font-sample-text sample-heading">Bold</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Color Section -->
+    <section class="footer-section" id="footer-color">
+        <div class="section-header">
+            <p class="section-number">03</p>
+            <h2 class="section-title">Footer Color</h2>
+            <p class="section-subtitle">Select a footer color from your brand palette. See the live preview as you choose.</p>
+        </div>
+
+        <div class="color-picker-container">
+            <div class="color-wheel-wrapper">
+                <h3 class="color-wheel-title">Brand Palette</h3>
+                
+                <div class="preset-colors">
+                    <div class="preset-color preset-dark-blue selected" data-color="#1a1f3c" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color preset-dark-blue-light" data-color="#2a3158" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color preset-beige" data-color="#f5f0e8" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color preset-beige-dark" data-color="#e8e0d0" onclick="selectPresetColor(this)"></div>
+                    <div class="preset-color preset-white" data-color="#ffffff" onclick="selectPresetColor(this)"></div>
+                </div>
+                <div class="preset-labels">
+                    <span class="preset-label">Dark Blue</span>
+                    <span class="preset-label">Blue Light</span>
+                    <span class="preset-label">Beige</span>
+                    <span class="preset-label">Beige Dark</span>
+                    <span class="preset-label">White</span>
+                </div>
+
+                <div class="custom-color-input">
+                    <label>Custom:</label>
+                    <input type="color" id="customColor" value="#1a1f3c" onchange="updateCustomColor(this.value)">
+                    <input type="text" id="colorHex" value="#1a1f3c" oninput="updateFromHex(this.value)">
+                </div>
+
+                <div class="selected-color-display">
+                    <span>Selected Color:</span>
+                    <strong id="selectedColorValue">#1a1f3c</strong>
+                </div>
+            </div>
+
+            <div class="footer-preview-wrapper">
+                <h3>Live Preview</h3>
+                <div class="footer-preview" id="footerPreview" style="background: #1a1f3c; color: #ffffff;">
+                    <div class="footer-content">
+                        <div class="footer-top">
+                            <div class="footer-brand">
+                                <h4>MOIRE</h4>
+                                <p>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    1093 Hood Avenue, CA
+                                </p>
+                                <p>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    +(123)-456-7890
+                                </p>
+                                <p>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                    Emillia@example.com
+                                </p>
+                            </div>
+                            <div class="footer-links">
+                                <h5>My Account</h5>
+                                <ul>
+                                    <li><a href="#" style="color: inherit;">Login/Register</a></li>
+                                    <li><a href="#" style="color: inherit;">Wishlist</a></li>
+                                    <li><a href="#" style="color: inherit;">Track Your Orders</a></li>
+                                    <li><a href="#" style="color: inherit;">Checkout</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-links">
+                                <h5>Customer Care</h5>
+                                <ul>
+                                    <li><a href="#" style="color: inherit;">Contact Us</a></li>
+                                    <li><a href="#" style="color: inherit;">Terms of Service</a></li>
+                                    <li><a href="#" style="color: inherit;">Privacy Policy</a></li>
+                                    <li><a href="#" style="color: inherit;">Gift Card</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <div class="footer-payments">We Accept Payments</div>
+                            <div class="footer-social">
+                                <a href="#" style="color: inherit;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                                </a>
+                                <a href="#" style="color: inherit;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+                                </a>
+                                <a href="#" style="color: inherit;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="summary-section" id="summary">
+        <h2 class="summary-title">Your Selections</h2>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h4>Icons</h4>
+                <div class="summary-icons" id="summaryIcons">
+                    <p class="value" style="opacity: 0.5;">Select icons above</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <h4>Typography</h4>
+                <p class="value" id="summaryFont">Select a font pairing above</p>
+            </div>
+            <div class="summary-card">
+                <h4>Footer Color</h4>
+                <p class="value" id="summaryColor">#1a1f3c (Dark Blue)</p>
+            </div>
+        </div>
+        <button class="export-btn" onclick="exportSelections()">Export Selections</button>
+    </section>
+
+    <script>
+        // State management
+        const selections = {
+            icons: {},
+            font: null,
+            footerColor: '#1a1f3c'
+        };
+
+        // Icon Selection
+        function selectIcon(category, element) {
+            const categoryEl = document.querySelector(`[data-category="${category}"]`);
+            categoryEl.querySelectorAll('.icon-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            
+            const iconName = element.querySelector('.icon-name').textContent;
+            const iconSvg = element.querySelector('.icon-display').innerHTML;
+            selections.icons[category] = { name: iconName, svg: iconSvg };
+            
+            updateSummary();
+        }
+
+        // Font Selection
+        function selectFont(element) {
+            document.querySelectorAll('.font-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            
+            const fontName = element.querySelector('.font-info h3').textContent;
+            selections.font = fontName;
+            
+            updateSummary();
+        }
+
+        // Color Selection
+        function selectPresetColor(element) {
+            document.querySelectorAll('.preset-color').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            
+            const color = element.dataset.color;
+            updateFooterColor(color);
+        }
+
+        function updateCustomColor(color) {
+            document.querySelectorAll('.preset-color').forEach(opt => opt.classList.remove('selected'));
+            document.getElementById('colorHex').value = color;
+            updateFooterColor(color);
+        }
+
+        function updateFromHex(value) {
+            if (/^#[0-9A-Fa-f]{6}$/.test(value)) {
+                document.querySelectorAll('.preset-color').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('customColor').value = value;
+                updateFooterColor(value);
+            }
+        }
+
+        function updateFooterColor(color) {
+            const footer = document.getElementById('footerPreview');
+            footer.style.backgroundColor = color;
+            
+            // Determine text color based on background brightness
+            const rgb = hexToRgb(color);
+            const brightness = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+            const textColor = brightness > 128 ? '#1a1f3c' : '#ffffff';
+            footer.style.color = textColor;
+            
+            // Update border for light colors
+            if (brightness > 200) {
+                footer.style.border = '1px solid #e8e0d0';
+            } else {
+                footer.style.border = 'none';
+            }
+            
+            document.getElementById('selectedColorValue').textContent = color;
+            document.getElementById('colorHex').value = color;
+            document.getElementById('customColor').value = color;
+            
+            selections.footerColor = color;
+            updateSummary();
+        }
+
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : { r: 0, g: 0, b: 0 };
+        }
+
+        function getColorName(hex) {
+            const colorNames = {
+                '#1a1f3c': 'Dark Blue',
+                '#2a3158': 'Blue Light',
+                '#f5f0e8': 'Beige',
+                '#e8e0d0': 'Beige Dark',
+                '#ffffff': 'White'
+            };
+            return colorNames[hex.toLowerCase()] || 'Custom';
+        }
+
+        // Update Summary
+        function updateSummary() {
+            // Icons
+            const iconsSummary = document.getElementById('summaryIcons');
+            const iconCategories = Object.keys(selections.icons);
+            
+            if (iconCategories.length > 0) {
+                iconsSummary.innerHTML = iconCategories.map(cat => {
+                    const icon = selections.icons[cat];
+                    const categoryName = cat.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    return `
+                        <div class="summary-icon-item">
+                            <div style="width: 30px; height: 30px;">${icon.svg.replace('stroke="#1a1f3c"', 'stroke="currentColor"').replace('fill="#1a1f3c"', 'fill="currentColor"')}</div>
+                            <span>${categoryName}</span>
+                        </div>
+                    `;
+                }).join('');
+            }
+            
+            // Font
+            const fontSummary = document.getElementById('summaryFont');
+            fontSummary.textContent = selections.font || 'Select a font pairing above';
+            
+            // Color
+            const colorSummary = document.getElementById('summaryColor');
+            const colorName = getColorName(selections.footerColor);
+            colorSummary.innerHTML = `<span style="display: inline-block; width: 20px; height: 20px; background: ${selections.footerColor}; border-radius: 4px; vertical-align: middle; margin-right: 8px; border: 1px solid rgba(255,255,255,0.2);"></span>${selections.footerColor} (${colorName})`;
+        }
+
+        // Export Selections
+        function exportSelections() {
+            const exportData = {
+                icons: Object.entries(selections.icons).map(([cat, icon]) => ({
+                    category: cat.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()),
+                    selected: icon.name
+                })),
+                typography: selections.font,
+                footerColor: {
+                    hex: selections.footerColor,
+                    name: getColorName(selections.footerColor)
+                },
+                exportDate: new Date().toISOString()
+            };
+            
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'moire-selections.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            alert('Selections exported! Check your downloads folder for moire-selections.json');
+        }
+
+        // Initialize
+        updateSummary();
+    </script>
+</body>
+</html>
+
